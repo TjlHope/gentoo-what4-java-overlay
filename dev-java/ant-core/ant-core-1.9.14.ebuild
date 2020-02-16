@@ -3,6 +3,9 @@
 
 EAPI=6
 
+ANT_TASK_JDKVER=1.5
+ANT_TASK_JREVER=1.5
+
 # Don't depend on itself.
 JAVA_ANT_DISABLE_ANT_CORE_DEP="true"
 
@@ -23,7 +26,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 
-DEPEND=">=virtual/jdk-1.8:*
+DEPEND=">=virtual/jdk-1.5:*
 	!dev-java/ant-tasks
 	!dev-java/ant-optional"
 RDEPEND="${DEPEND}"
@@ -113,5 +116,12 @@ pkg_postinst() {
 			elog "Since 1.7.1, the ant-tasks meta-ebuild has been removed and its USE"
 			elog "flags have been moved to dev-java/ant."
 		fi
+	fi
+
+	if java-pkg_is-vm-version-ge 1.8; then
+		ewarn "JVM ($(java-config -f)) is >= 1.8 for ant-1.9"
+		ewarn "ant-1.9 is for >=java5 whereas ant-1.10 is for >=java8"
+		ewarn "Modify preferred jdk in /etc/java-config-2/build/jdk.conf"
+		ewarn "to build with a different JDK."
 	fi
 }

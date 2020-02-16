@@ -3,8 +3,8 @@
 
 EAPI=6
 
-ANT_TASK_JDKVER=1.8
-ANT_TASK_JREVER=1.8
+ANT_TASK_JDKVER=1.5
+ANT_TASK_JREVER=1.5
 ANT_TASK_DEPNAME="jakarta-regexp-1.4"
 
 inherit ant-tasks
