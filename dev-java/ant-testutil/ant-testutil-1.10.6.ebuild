@@ -26,7 +26,7 @@ RDEPEND="${CDEPEND}
 # build-only deps, but since those are quite common, it wasn't worth to patch it.
 
 src_unpack() {
-	ant-tasks-2_src_unpack base
+	ant-tasks_src_unpack base
 	java-pkg_jar-from --build-only junit-4,ant-junit4,ant-swing
 	java-pkg_jar-from --build-only ant-core ant-launcher.jar
 }

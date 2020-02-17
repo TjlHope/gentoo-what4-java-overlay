@@ -14,6 +14,6 @@ KEYWORDS="~amd64 ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-
 RDEPEND=">=dev-java/antlr-2.7.7-r7:0"
 
 src_install() {
-	ant-tasks-2_src_install
+	ant-tasks_src_install
 	java-pkg_register-dependency antlr
 }

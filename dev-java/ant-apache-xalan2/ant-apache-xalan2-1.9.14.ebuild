@@ -17,6 +17,6 @@ DEPEND="dev-java/xalan:0
 RDEPEND="${DEPEND}"
 
 src_unpack() {
-	ant-tasks-2_src_unpack all
+	ant-tasks_src_unpack all
 	java-pkg_jar-from xalan-serializer
 }
